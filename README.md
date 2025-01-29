@@ -18,7 +18,7 @@ pip install customtkinter names
 ## Usage  
 Run the script to open the GUI and generate random profiles with a click of a button.  
 ```bash
-python dop.py
+python app.py
 ```
 
 ## Requirements  
