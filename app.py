@@ -27,7 +27,7 @@ def create_random_profile():
 
     profile = f"""
 Email: {email}
-Passwords(Email - Epic Games): {password}
+Passwords(Email - Epic Games): {password}{random.randint(100, 999)}
 InBox question : What is your pet's name?
 InBox Answer the question : {inbox_answer}
 Date of birth: {date_of_birth}
@@ -35,9 +35,9 @@ Creation date: {creation_date}
 Name(First - Last): {first_name} {last_name}
 Displayname: {display_name}
 Region: {region}
-Unlocked cars:
+Unlocked cars: backfire - breakout - dominus - gizmo - hotshot - merc - octane - paladin - road hog - venom - x-devil
 
-payment method: Vodafone cash - insta pay
+payment method: Vodafone cash - insta pay (01064374797)
 """
 
     return profile
