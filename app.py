@@ -49,11 +49,19 @@ payment method: Vodafone cash - insta pay (01064374797)
 # Function to display the generated profile in a GUI window
 def display_profile_in_window():
     def generate_and_display():
-        profile = create_random_profile()  # Generate a new profile
+        profile = create_random_profile().strip()  # Generate a new profile and remove leading/trailing whitespace
         result_label.configure(state="normal")  # Make text box editable temporarily
         result_label.delete("1.0", "end")  # Clear previous profile
         result_label.insert("1.0", profile)  # Insert new profile
         result_label.configure(state="disabled")  # Make text box read-only again
+        
+        # Copy the profile to clipboard
+        root.clipboard_clear()  # Clear clipboard contents
+        root.clipboard_append(profile)  # Copy new profile to clipboard
+        
+        # Show temporary message indicating copy was successful
+        status_label.configure(text="Profile copied to clipboard!", text_color="green")
+        root.after(2000, lambda: status_label.configure(text="", text_color="green"))  # Clear message after 2 seconds
 
     # Initialize the customtkinter window
     root = ctk.CTk()
@@ -67,7 +75,11 @@ def display_profile_in_window():
 
     # Create a text widget to display the profile result
     result_label = ctk.CTkTextbox(root, width=580, height=300, wrap="word")
-    result_label.pack(padx=10, pady=10, fill="both", expand=True)  # Configure text box properties
+    result_label.pack(padx=10, pady=5, fill="both", expand=True)  # Configure text box properties
+
+    # Create a label to show clipboard status
+    status_label = ctk.CTkLabel(root, text="", height=20)
+    status_label.pack(pady=5)
 
     # Make the text widget initially empty and read-only
     result_label.configure(state="disabled")
