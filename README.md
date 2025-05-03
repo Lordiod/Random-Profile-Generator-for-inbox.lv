@@ -42,8 +42,6 @@ This will open the GUI window where you can generate random profiles by clicking
 
 ```
 Random-Profile-Generator-for-inbox.lv/
-├── data/
-│   └── regions.json       # Available regions for profile generation
 ├── src/
 │   ├── __init__.py        # Package initialization
 │   ├── gui.py             # GUI implementation
