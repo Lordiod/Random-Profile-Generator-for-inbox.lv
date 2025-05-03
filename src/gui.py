@@ -1,5 +1,5 @@
 from customtkinter import CTk, CTkButton, CTkTextbox, CTkLabel
-from profile_generator import create_random_profile
+from src.profile_generator import create_random_profile
 
 def display_profile_in_window():
     def generate_and_display():
