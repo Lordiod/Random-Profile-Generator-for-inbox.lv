@@ -7,6 +7,7 @@ A simple application that generates random user profiles for use with inbox.lv. 
 - Generate random usernames, emails, passwords, and other profile details.
 - User-friendly GUI for generating and displaying profiles.
 - Customizable profile generation with options for different regions.
+- Automatic clipboard copying of generated profiles.
 
 ## Installation
 
@@ -27,10 +28,31 @@ A simple application that generates random user profiles for use with inbox.lv. 
 
 To run the application, execute the following command in the terminal:
 ```
+python main.py
+```
+
+Alternatively, you can use:
+```
 python -m src.gui
 ```
 
 This will open the GUI window where you can generate random profiles by clicking the "Generate Profile" button.
+
+## Project Structure
+
+```
+Random-Profile-Generator-for-inbox.lv/
+├── data/
+│   └── regions.json       # Available regions for profile generation
+├── src/
+│   ├── __init__.py        # Package initialization
+│   ├── gui.py             # GUI implementation
+│   └── profile_generator.py # Profile generation logic
+├── LICENSE                # MIT License
+├── README.md              # Project documentation
+├── main.py                # Main entry point
+└── requirements.txt       # Project dependencies
+```
 
 ## Contributing
 
