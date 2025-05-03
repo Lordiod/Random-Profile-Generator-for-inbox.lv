@@ -1,37 +1,37 @@
-import random  # Import the random module for generating random values
-import string  # Import string module for character sets
-from datetime import datetime, timedelta  # Import datetime for handling dates
-import names  # Import names module for generating random names
+from random import choices, randint  # Only import needed random functions
+from string import ascii_lowercase, ascii_letters, digits  # Only import needed string constants
+from datetime import datetime, timedelta  # These are both needed
+from names import get_first_name, get_last_name  # Only import needed name functions
 import customtkinter as ctk  # Import customtkinter for GUI
 
 # Function to generate a random string of specified length
-def generate_random_string(length, char_set=string.ascii_lowercase):
-    return ''.join(random.choices(char_set, k=length))
+def generate_random_string(length, char_set=ascii_lowercase):
+    return ''.join(choices(char_set, k=length))
 
 # Function to generate a random birth date within a specified range
 def generate_random_date(start_year=1970, end_year=2005):
     start_date = datetime(start_year, 1, 1)  # Define start date
     end_date = datetime(end_year, 12, 31)  # Define end date
-    random_date = start_date + timedelta(days=random.randint(0, (end_date - start_date).days))  # Generate random date
+    random_date = start_date + timedelta(days=randint(0, (end_date - start_date).days))  # Generate random date
     return random_date.strftime("%d %B %Y")  # Return formatted date
 
 # Function to create a random user profile
 def create_random_profile():
     username = generate_random_string(10)  # Generate random username
     email = f"{username}@inbox.lv"  # Create email using the username
-    password = generate_random_string(10, char_set=string.ascii_letters + string.digits)  # Generate random password
-    inbox_answer = generate_random_string(6, char_set=string.ascii_lowercase + string.digits)  # Generate inbox security answer
+    password = generate_random_string(10, char_set=ascii_letters + digits)  # Generate random password
+    inbox_answer = generate_random_string(6, char_set=ascii_lowercase + digits)  # Generate inbox security answer
     date_of_birth = "01 January 2000"  # Fixed date of birth
     creation_date = datetime.now().strftime("%d/%m/%Y")  # Get the current date as account creation date
-    first_name = names.get_first_name()  # Generate random first name
-    last_name = names.get_last_name()  # Generate random last name
+    first_name = get_first_name()  # Generate random first name
+    last_name = get_last_name()  # Generate random last name
     display_name = username  # Use username as display name
     region = "Egypt"  # Set default region
 
     # Create a profile template string
     profile = f"""
 Email: {email}
-Passwords(Email - Epic Games): {password}{random.randint(100, 999)}
+Passwords(Email - Epic Games): {password}{randint(100, 999)}
 InBox question : What is your pet's name?
 InBox Answer the question : {inbox_answer}
 Date of birth: {date_of_birth}
