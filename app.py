@@ -21,7 +21,7 @@ def create_random_profile():
     email = f"{username}@inbox.lv"  # Create email using the username
     password = generate_random_string(10, char_set=string.ascii_letters + string.digits)  # Generate random password
     inbox_answer = generate_random_string(6, char_set=string.ascii_lowercase + string.digits)  # Generate inbox security answer
-    date_of_birth = generate_random_date()  # Generate random date of birth
+    date_of_birth = "01 January 2000"  # Fixed date of birth
     creation_date = datetime.now().strftime("%d/%m/%Y")  # Get the current date as account creation date
     first_name = names.get_first_name()  # Generate random first name
     last_name = names.get_last_name()  # Generate random last name
