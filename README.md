@@ -1,34 +1,41 @@
-# 🎭 Random Profile Generator  
+# Random Profile Generator
 
-## Description  
-**Random Profile Generator** is a Python script that generates realistic random user profiles, including names, emails, passwords, dates of birth, and more. It uses `customtkinter` to provide a simple graphical interface for generating and displaying profiles. This tool is useful for testing, dummy data generation, and automation purposes.  
+A simple application that generates random user profiles for use with inbox.lv. The application includes a graphical user interface (GUI) for easy interaction and profile generation.
 
-## Features  
-✅ Generates random usernames, emails, and passwords  
-✅ Creates realistic names using the `names` library  
-✅ Generates random dates of birth within a specified range  
-✅ Provides a graphical UI using `customtkinter`  
-✅ Includes a built-in random security question answer  
+## Features
 
-## Installation  
-```bash
-pip install customtkinter names
+- Generate random usernames, emails, passwords, and other profile details.
+- User-friendly GUI for generating and displaying profiles.
+- Customizable profile generation with options for different regions.
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/Lordiod/random-profile-generator.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd random-profile-generator
+   ```
+3. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+To run the application, execute the following command in the terminal:
+```
+python -m src.gui
 ```
 
-## Usage  
-Run the script to open the GUI and generate random profiles with a click of a button.  
-```bash
-python app.py
-```
+This will open the GUI window where you can generate random profiles by clicking the "Generate Profile" button.
 
-## Requirements  
-- Python 3.x  
-- `customtkinter` for UI  
-- `names` for random name generation  
+## Contributing
 
-## License  
-📜 Open-source – feel free to modify and use!  
+Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
----
+## License
 
-Let me know if you want any modifications! 🚀
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
