@@ -24,11 +24,11 @@ def create_random_profile():
     last_name = get_last_name()
     display_name = username
     region = "Egypt"
-
+    passsssss = f"{password}{randint(100, 999)}"
     profile = f"""
 Login email: {email}
-Password email: {password}{randint(100, 999)}
-Password epic games: {password}{randint(100, 999)}
+Password email: {passsssss}
+Password epic games: {passsssss}
 First name: {first_name}
 Last name: {last_name}
 Date of birth: {date_of_birth}
@@ -37,6 +37,8 @@ Cars unlocked: 11
 Question: What is your pet's name?
 Answer: {inbox_answer}
 payment method: instapay (01064374797)
+
+username: {username}
 """
 
     return profile
