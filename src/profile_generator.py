@@ -26,18 +26,17 @@ def create_random_profile():
     region = "Egypt"
 
     profile = f"""
-Email: {email}
-Passwords(Email - Epic Games): {password}{randint(100, 999)}
-InBox question : What is your pet's name?
-InBox Answer the question : {inbox_answer}
+Login email: {email}
+Password email: {password}{randint(100, 999)}
+Password epic games: {password}{randint(100, 999)}
+First name: {first_name}
+Last name: {last_name}
 Date of birth: {date_of_birth}
-Creation date: {creation_date}
-Name(First - Last): {first_name} {last_name}
-Displayname: {display_name}
-Region: {region}
-Unlocked cars: backfire - breakout - dominus - gizmo - hotshot - merc - octane - paladin - road hog - venom - x-devil
-
-payment method: Vodafone cash - insta pay (01064374797)
+Country: Egypt
+Cars unlocked: 11
+Question: What is your pet's name?
+Answer: {inbox_answer}
+payment method: instapay (01064374797)
 """
 
     return profile
