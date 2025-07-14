@@ -36,7 +36,6 @@ Country: Egypt
 Cars unlocked: 11
 Question: What is your pet's name?
 Answer: {inbox_answer}
-payment method: instapay (01064374797)
 
 username: {username}
 """
