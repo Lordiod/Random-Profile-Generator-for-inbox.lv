@@ -1,7 +1,8 @@
-from customtkinter import CTk, CTkButton, CTkTextbox, CTkLabel
-from src.profile_generator import create_random_profile
-
 def display_profile_in_window():
+    # Lazy import to speed up startup - only import GUI when actually needed
+    from customtkinter import CTk, CTkButton, CTkTextbox, CTkLabel
+    from src.profile_generator import create_random_profile
+    
     def generate_and_display():
         profile = create_random_profile().strip()
         result_label.configure(state="normal")
