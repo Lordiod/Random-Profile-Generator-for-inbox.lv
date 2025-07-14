@@ -1,59 +1,64 @@
 # Random Profile Generator for inbox.lv
 
-A highly optimized random profile generator for creating inbox.lv accounts with **millisecond startup times**.
+A blazing-fast random profile generator for creating inbox.lv accounts, optimized for **millisecond startup times**.
 
-## 🚀 Performance Optimizations
+---
 
-This project has been optimized for **ultra-fast startup times** through:
+## Why This Project?
 
-- **Lazy imports**: Heavy libraries (customtkinter, names) only load when needed
-- **Cached data**: Pre-computed character sets and minimal object creation
-- **Modular design**: Separate fast profile generator for CLI usage
-- **Minimal dependencies**: Only essential imports at startup
+- **Ultra-fast startup**: Launches in milliseconds
+- **Minimal dependencies**: Only loads what's needed, when needed
+- **Multiple interfaces**: Use via GUI, CLI, or as a Python module
+- **Cross-platform**: Works on Windows, macOS, and Linux
 
-## 🎯 Launch Options
+---
+
+## Installation
+
+1. **Clone the repository**
+   ```
+   git clone https://github.com/Lordiod/random-profile-generator.git
+   cd random-profile-generator
+   ```
+2. **Install dependencies**
+   ```
+   pip install -r requirements.txt
+   ```
+
+---
+
+## Usage
 
 ### 1. GUI Application (Fast)
 ```bash
 python main.py
 ```
-Or double-click `launch.bat` on Windows
+Or double-click `launch.bat` (Windows)
 
 ### 2. Command Line (Instant)
 ```bash
 python cli.py
 ```
-Generates a profile instantly without GUI overhead
+Generates a profile instantly, no GUI.
 
-### 3. Import as Module
+### 3. Import as a Module
 ```python
 from src.profile_generator_fast import create_random_profile_fast
 profile = create_random_profile_fast()
 ```
 
-## 📦 Installation
+---
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/Lordiod/random-profile-generator.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd random-profile-generator
-   ```
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+## Features
 
-## 🔧 Features
+- **Instant startup**: Millisecond launch times
+- **Auto clipboard**: Profiles auto-copied
+- **Flexible interfaces**: GUI & CLI
+- **Cross-platform**: Windows, macOS, Linux
 
-- **Instant startup**: Optimized for millisecond launch times
-- **Auto clipboard**: Generated profiles automatically copied
-- **Multiple interfaces**: GUI and CLI options
-- **Cross-platform**: Works on Windows, macOS, and Linux
+---
 
-## 📊 Performance Comparison
+## Performance
 
 | Launch Method | Startup Time | Memory Usage |
 |---------------|--------------|--------------|
@@ -61,7 +66,9 @@ profile = create_random_profile_fast()
 | Optimized GUI | ~500ms       | Medium       |
 | CLI Mode      | ~100ms       | Low          |
 
-## 🎮 Generated Profile Format
+---
+
+## Example Output
 
 ```
 Login email: randomuser@inbox.lv
@@ -78,23 +85,29 @@ Answer: abc123
 username: randomuser
 ```
 
+---
+
 ## Project Structure
 
 ```
 Random-Profile-Generator-for-inbox.lv/
 ├── src/
-│   ├── __init__.py               # Package initialization
-│   ├── gui.py                    # Optimized GUI implementation
-│   └── profile_generator.py      # Performance-optimized generator
-├── main.py                       # Optimized main entry point
-├── requirements.txt              # Dependencies
-└── README.md                     # This file
+│   ├── __init__.py
+│   ├── gui.py
+│   └── profile_generator.py
+├── main.py
+├── requirements.txt
+└── README.md
 ```
+
+---
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
+Contributions are welcome! Open an issue or submit a pull request.
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License – see [LICENSE](LICENSE) for details.
