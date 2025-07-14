@@ -1,32 +1,52 @@
+"""
+Performance-optimized profile generator
+Uses minimal imports and pre-computed data for faster generation
+"""
 from random import choices, randint
 from string import ascii_lowercase, ascii_letters, digits
-from datetime import datetime, timedelta
-from names import get_first_name, get_last_name
-import customtkinter as ctk
+from datetime import datetime
 
-def generate_random_string(length, char_set=ascii_lowercase):
+# Pre-computed character sets for faster access
+_LOWER_CHARS = ascii_lowercase
+_ALL_CHARS = ascii_letters + digits
+_ANSWER_CHARS = ascii_lowercase + digits
+
+# Cache for name generation - only import when needed
+_names_cache = None
+
+def _get_names_module():
+    """Lazy import names module"""
+    global _names_cache
+    if _names_cache is None:
+        import names
+        _names_cache = names
+    return _names_cache
+
+def generate_random_string(length, char_set=_LOWER_CHARS):
+    """Fast string generation using pre-computed character sets"""
     return ''.join(choices(char_set, k=length))
 
-def generate_random_date(start_year=1970, end_year=2005):
-    start_date = datetime(start_year, 1, 1)
-    end_date = datetime(end_year, 12, 31)
-    random_date = start_date + timedelta(days=randint(0, (end_date - start_date).days))
-    return random_date.strftime("%d %B %Y")
-
-def create_random_profile():
+def create_random_profile_fast():
+    """
+    Ultra-fast profile generation with minimal overhead
+    """
+    # Generate basic data without imports
     username = generate_random_string(10)
     email = f"{username}@inbox.lv"
-    password = generate_random_string(10, char_set=ascii_letters + digits)
-    inbox_answer = generate_random_string(6, char_set=ascii_lowercase + digits)
+    password = generate_random_string(10, char_set=_ALL_CHARS)
+    inbox_answer = generate_random_string(6, char_set=_ANSWER_CHARS)
+    
+    # Only import names when actually generating profile
+    names_module = _get_names_module()
+    first_name = names_module.get_first_name()
+    last_name = names_module.get_last_name()
+    
+    # Fixed data for speed
     date_of_birth = "01 January 2000"
-    creation_date = datetime.now().strftime("%d/%m/%Y")
-    first_name = get_first_name()
-    last_name = get_last_name()
-    display_name = username
-    region = "Egypt"
     passsssss = f"{password}{randint(100, 999)}"
-    profile = f"""
-Login email: {email}
+    
+    # Pre-formatted template for speed
+    profile = f"""Login email: {email}
 Password email: {passsssss}
 Password epic games: {passsssss}
 First name: {first_name}
@@ -39,40 +59,7 @@ Answer: {inbox_answer}
 
 username: {username}
 """
-
     return profile
 
-def display_profile_in_window():
-    def generate_and_display():
-        profile = create_random_profile().strip()
-        result_label.configure(state="normal")
-        result_label.delete("1.0", "end")
-        result_label.insert("1.0", profile)
-        result_label.configure(state="disabled")
-        
-        root.clipboard_clear()
-        root.clipboard_append(profile)
-        
-        status_label.configure(text="Profile copied to clipboard!", text_color="green")
-        root.after(2000, lambda: status_label.configure(text="", text_color="green"))
-
-    root = ctk.CTk()
-    root.title("Random Profile Generator")
-    root.geometry("600x400")
-    root.resizable(False, False)
-
-    generate_button = ctk.CTkButton(root, text="Generate Profile", command=generate_and_display)
-    generate_button.pack(pady=10)
-
-    result_label = ctk.CTkTextbox(root, width=580, height=300, wrap="word")
-    result_label.pack(padx=10, pady=5, fill="both", expand=True)
-
-    status_label = ctk.CTkLabel(root, text="", height=20)
-    status_label.pack(pady=5)
-
-    result_label.configure(state="disabled")
-
-    root.mainloop()
-
-if __name__ == "__main__":
-    display_profile_in_window()
+# Alias for compatibility
+create_random_profile = create_random_profile_fast
