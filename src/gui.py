@@ -17,7 +17,9 @@ def display_profile_in_window():
         root.clipboard_clear()
         root.clipboard_append(profile)
 
-        status_label.configure(text="Profile copied to clipboard!", text_color="#4ADE80")  # green accent
+        status_label.configure(
+            text="Profile copied to clipboard!", text_color="#4ADE80"
+        )  # green accent
         root.after(2000, lambda: status_label.configure(text="", text_color="#4ADE80"))
 
     root = ctk.CTk()
@@ -26,10 +28,21 @@ def display_profile_in_window():
     root.resizable(False, False)
 
     # Main frame for padding and grouping
-    main_frame = ctk.CTkFrame(root, corner_radius=18, fg_color=("#23272F", "#181A20"), border_width=2, border_color="#3B82F6")
+    main_frame = ctk.CTkFrame(
+        root,
+        corner_radius=18,
+        fg_color=("#23272F", "#181A20"),
+        border_width=2,
+        border_color="#3B82F6",
+    )
     main_frame.pack(padx=18, pady=18, fill="both", expand=True)
 
-    title_label = ctk.CTkLabel(main_frame, text="Random Profile Generator", font=("Segoe UI", 24, "bold"), text_color="#60A5FA")
+    title_label = ctk.CTkLabel(
+        main_frame,
+        text="Random Profile Generator",
+        font=("Segoe UI", 24, "bold"),
+        text_color="#60A5FA",
+    )
     title_label.pack(pady=(10, 2))
 
     generate_button = ctk.CTkButton(
@@ -43,7 +56,7 @@ def display_profile_in_window():
         corner_radius=12,
         border_width=0,
         width=180,
-        height=38
+        height=38,
     )
     generate_button.pack(pady=(8, 12))
 
@@ -57,7 +70,7 @@ def display_profile_in_window():
         text_color="#F3F4F6",
         border_width=2,
         border_color="#3B82F6",
-        corner_radius=10
+        corner_radius=10,
     )
     result_textbox.pack(padx=8, pady=6, fill="both", expand=True)
 
@@ -66,7 +79,7 @@ def display_profile_in_window():
         text="",
         height=22,
         font=("Segoe UI", 13, "italic"),
-        text_color="#4ADE80"
+        text_color="#4ADE80",
     )
     status_label.pack(pady=(4, 15))
 
