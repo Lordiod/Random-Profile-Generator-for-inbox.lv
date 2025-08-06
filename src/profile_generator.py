@@ -3,9 +3,9 @@ Performance-optimized profile generator
 Uses minimal imports and pre-computed data for faster generation
 """
 
-from random import choices, randint
-from string import ascii_lowercase, ascii_letters, digits
 from datetime import datetime
+from random import choices, randint
+from string import ascii_letters, ascii_lowercase, digits
 
 # Pre-computed character sets for faster access
 _LOWER_CHARS = ascii_lowercase
