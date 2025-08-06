@@ -1,11 +1,4 @@
 
-# Professional Python CI/CD Workflow (2025 Best Practices)
-# - Lint, test, build, and publish jobs are separated for clarity and maintainability
-# - Uses artifact upload/download for robust build/release separation
-# - Uses modern actions and secure PyPI publishing
-# - Add comments and clear job names
-
-
 name: Python CI/CD
 
 permissions:
