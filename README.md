@@ -1,13 +1,24 @@
-# Random Profile Generator for inbox.lv
 
-A blazing-fast random profile generator for creating inbox.lv accounts, optimized for **millisecond startup times**.
+<h1 align="center">Random Profile Generator for inbox.lv</h1>
+
+<p align="center">
+  <b>Stop wasting time brainstorming names or usernames get instant, ready-to-use profiles with one click.</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python Version">
+  <img src="https://img.shields.io/badge/CustomTkinter-%3E%3D5.2.0-blueviolet?style=flat-square" alt="CustomTkinter">
+  <img src="https://img.shields.io/badge/Tkinter-built--in-lightgrey?style=flat-square" alt="Tkinter">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
+</p>
 
 ---
 
-## Why This Project?
+## Why Use This Project?
 
 - **Ultra-fast startup**: Launches in milliseconds
 - **Minimal dependencies**: Only loads what's needed, when needed
+- **Modern, clean GUI**: Beautiful dark theme with colorful accents
 - **Cross-platform**: Works on Windows, macOS, and Linux
 
 ---
@@ -15,12 +26,12 @@ A blazing-fast random profile generator for creating inbox.lv accounts, optimize
 ## Installation
 
 1. **Clone the repository**
-   ```
-   git clone https://github.com/Lordiod/random-profile-generator.git
-   cd random-profile-generator
+   ```bash
+   git clone https://github.com/Lordiod/Random-Profile-Generator-for-inbox.lv.git
+   cd Random-Profile-Generator-for-inbox.lv
    ```
 2. **Install dependencies**
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -28,48 +39,37 @@ A blazing-fast random profile generator for creating inbox.lv accounts, optimize
 
 ## Usage
 
-### GUI Application
+### Launch the GUI
 ```bash
 python main.py
 ```
 
-
 ---
+
 
 ## Features
 
 - **Instant startup**: Millisecond launch times
-- **Auto clipboard**: Profiles auto-copied
-- **Flexible interfaces**: GUI & CLI
+- **Auto clipboard**: Profiles are auto-copied
 - **Cross-platform**: Windows, macOS, Linux
 
 ---
 
-## Example Output
+## Screenshots
 
-```
-Login email: randomuser@inbox.lv
-Password email: password123
-Password epic games: password123
-First name: John
-Last name: Doe
-Date of birth: 01 January 2000
-Country: Egypt
-Cars unlocked: 11
-Question: What is your pet's name?
-Answer: abc123
-
-username: randomuser
-```
+<p align="center">
+  <img src="assets/app.png" width="600"/>
+</p>
 
 ---
 
 ## Project Structure
 
-```
+```text
 Random-Profile-Generator-for-inbox.lv/
+├── assets/
+│   └── app.png
 ├── src/
-│   ├── __init__.py
 │   ├── gui.py
 │   └── profile_generator.py
 ├── main.py
@@ -81,7 +81,13 @@ Random-Profile-Generator-for-inbox.lv/
 
 ## Contributing
 
-Contributions are welcome! Open an issue or submit a pull request.
+Contributions are welcome! Please open an issue or submit a pull request.
+
+---
+
+## Getting Help
+
+If you have questions, suggestions, or need help, please open an [issue](https://github.com/Lordiod/Random-Profile-Generator-for-inbox.lv/issues).
 
 ---
 
