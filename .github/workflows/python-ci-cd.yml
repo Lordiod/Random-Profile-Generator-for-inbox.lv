@@ -5,7 +5,11 @@
 # - Uses modern actions and secure PyPI publishing
 # - Add comments and clear job names
 
+
 name: Python CI/CD
+
+permissions:
+  contents: write
 
 on:
   push:
