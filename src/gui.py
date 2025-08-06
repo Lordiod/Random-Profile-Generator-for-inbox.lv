@@ -1,6 +1,7 @@
 def display_profile_in_window():
     # Lazy import to speed up startup - only import GUI when actually needed
     import customtkinter as ctk
+
     from src.profile_generator import create_random_profile
 
     # Set dark mode and a colorful theme
